@@ -1,0 +1,175 @@
+# MT RECONOCEDORA: L = { a^n b^n c^n | n >= 1 }  (marca a->X, b->Y, c->Z)
+---
+q_states:
+  q_list:
+  - 'q0'
+  - 'q1'
+  - 'q2'
+  - 'q3'
+  - 'q4'
+  - 'qf'
+  initial: 'q0'
+  final: 'qf'
+alphabet:
+- "a"
+- "b"
+- "c"
+tape_alphabet:
+- "a"
+- "b"
+- "c"
+- "X"
+- "Y"
+- "Z"
+- null   # blank
+delta:
+- params:
+    initial_state: 'q0'
+    mem_cache_value: null
+    tape_input: "a"
+  output:
+    final_state: 'q1'
+    mem_cache_value: null
+    tape_output: "X"
+    tape_displacement: R
+- params:
+    initial_state: 'q0'
+    mem_cache_value: null
+    tape_input: "Y"
+  output:
+    final_state: 'q4'
+    mem_cache_value: null
+    tape_output: "Y"
+    tape_displacement: R
+- params:
+    initial_state: 'q1'
+    mem_cache_value: null
+    tape_input: "a"
+  output:
+    final_state: 'q1'
+    mem_cache_value: null
+    tape_output: "a"
+    tape_displacement: R
+- params:
+    initial_state: 'q1'
+    mem_cache_value: null
+    tape_input: "Y"
+  output:
+    final_state: 'q1'
+    mem_cache_value: null
+    tape_output: "Y"
+    tape_displacement: R
+- params:
+    initial_state: 'q1'
+    mem_cache_value: null
+    tape_input: "b"
+  output:
+    final_state: 'q2'
+    mem_cache_value: null
+    tape_output: "Y"
+    tape_displacement: R
+- params:
+    initial_state: 'q2'
+    mem_cache_value: null
+    tape_input: "b"
+  output:
+    final_state: 'q2'
+    mem_cache_value: null
+    tape_output: "b"
+    tape_displacement: R
+- params:
+    initial_state: 'q2'
+    mem_cache_value: null
+    tape_input: "Z"
+  output:
+    final_state: 'q2'
+    mem_cache_value: null
+    tape_output: "Z"
+    tape_displacement: R
+- params:
+    initial_state: 'q2'
+    mem_cache_value: null
+    tape_input: "c"
+  output:
+    final_state: 'q3'
+    mem_cache_value: null
+    tape_output: "Z"
+    tape_displacement: L
+- params:
+    initial_state: 'q3'
+    mem_cache_value: null
+    tape_input: "a"
+  output:
+    final_state: 'q3'
+    mem_cache_value: null
+    tape_output: "a"
+    tape_displacement: L
+- params:
+    initial_state: 'q3'
+    mem_cache_value: null
+    tape_input: "b"
+  output:
+    final_state: 'q3'
+    mem_cache_value: null
+    tape_output: "b"
+    tape_displacement: L
+- params:
+    initial_state: 'q3'
+    mem_cache_value: null
+    tape_input: "Y"
+  output:
+    final_state: 'q3'
+    mem_cache_value: null
+    tape_output: "Y"
+    tape_displacement: L
+- params:
+    initial_state: 'q3'
+    mem_cache_value: null
+    tape_input: "Z"
+  output:
+    final_state: 'q3'
+    mem_cache_value: null
+    tape_output: "Z"
+    tape_displacement: L
+- params:
+    initial_state: 'q3'
+    mem_cache_value: null
+    tape_input: "X"
+  output:
+    final_state: 'q0'
+    mem_cache_value: null
+    tape_output: "X"
+    tape_displacement: R
+- params:
+    initial_state: 'q4'
+    mem_cache_value: null
+    tape_input: "Y"
+  output:
+    final_state: 'q4'
+    mem_cache_value: null
+    tape_output: "Y"
+    tape_displacement: R
+- params:
+    initial_state: 'q4'
+    mem_cache_value: null
+    tape_input: "Z"
+  output:
+    final_state: 'q4'
+    mem_cache_value: null
+    tape_output: "Z"
+    tape_displacement: R
+- params:
+    initial_state: 'q4'
+    mem_cache_value: null
+    tape_input: null
+  output:
+    final_state: 'qf'
+    mem_cache_value: null
+    tape_output: null
+    tape_displacement: S
+simulation_strings:
+- aabbcc
+- aaabbbccc
+- aabbbcc
+- aaabbbcc
+- abcabc
